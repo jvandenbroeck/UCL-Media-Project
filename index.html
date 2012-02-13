@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>UCL Media Visualizer</title>
+  
+  <SCRIPT LANGUAGE="JavaScript">
+function go(loc){
+    document.getElementById('iframe').src = loc;
+}
+</script>
+
+
+<style type="text/css">
+/*<![CDATA[*/
+body, div {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+select, text, input {
+	font-size: 15px;
+	font-weight: bold;
+	color: #006;
+}
+
+
+#head {
+ /*  font-size: 40px; */
+  padding: 10px 10px 20px 20px;
+	margin-bottom: 20px;  
+}
+
+#frame {
+  width: 100%;
+  /* margin: 0 auto; */
+  height: 600px;
+  float:left;
+}
+
+#title {
+	font-size: 20px;
+	float:left;
+	margin-right:20px;
+	}
+
+#item {
+	float:left;
+	margin-left:20px;
+}
+
+#form {
+
+margin-top: 10px;
+}
+/*]]>*/
+</style></head>
+
+<body>
+<div id="head"><div id=title>UCL<br />
+  Media Visualiser</div>
+ 
+ <form action="">
+  <div id=form>
+  <div id=item>
+  Display 
+    <label for="what"></label>
+    <select name="what" id="what" onchange="go(this.options[this.selectedIndex].value)">
+      <option value="one.html">an aggregate (heatmap)</option>
+      <option value="two.html">individual data points</option>
+    </select>
+    </div>
+    
+     <div id=item>
+  of 
+    <label for="what"></label>
+    <select name="what" id="what">
+      <option value="aggregate">All</option>
+      <option value="indiv">staff</option>
+          <option value="indiv">revenue</option>
+    </select>
+    
+    </div>
+    
+        
+     <div id=item>
+  in 
+    
+    <label for="textfield"></label>
+    <input type="text" name="textfield" id="textfield" />
+    </div>
+    
+    <!--
+     <div id=item>
+  as 
+    <label for="what"></label>
+    <select name="what" id="what">
+      <option value="aggregate">an aggregate</option>
+      <option value="indiv">individual data points</option>
+    </select>
+    </div>
+    -->
+    
+    
+    
+    
+  </div>
+  
+  <div id=item>
+  <input name="Display" type="button" value="Display" />
+  </div>
+  
+  </form>
+  
+</div><br />
+<div id="frame"><iframe id="iframe" src="one.html" width="100%" height="100%"></iframe></div>
+</body>
+
+</html>
