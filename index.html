@@ -10,6 +10,33 @@
 function go(loc){
     document.getElementById('iframe').src = loc;
 }
+
+function validateVisibility()
+{
+	if(document.getElementById('what').options[document.getElementById('what').selectedIndex].value == "two")
+	{
+		hide('item2');
+		hide('item3');
+		hide('item4');
+	}
+	else
+	{
+		show('item2');
+		show('item3');
+		show('item4');
+	}
+}
+
+function show(item)
+{
+	document.getElementById(item).style.visibility = 'visible';
+	//document.write("Error! The value is too high.");
+}
+
+function hide(item)
+{
+	document.getElementById(item).style.visibility = 'hidden';
+}
 </script>
 
 
@@ -51,6 +78,21 @@ select, text, input {
 	margin-left:20px;
 }
 
+#item2 {
+	float:left;
+	margin-left:20px;
+}
+
+#item3 {
+	float:left;
+	margin-left:20px;
+}
+
+#item4 {
+	float:left;
+	margin-left:20px;
+}
+
 #form {
 
 margin-top: 10px;
@@ -67,25 +109,26 @@ margin-top: 10px;
   <div id=item>
   Display 
     <label for="what"></label>
-    <select name="what" id="what" onchange="go(this.options[this.selectedIndex].value)">
-      <option value="one.html">an aggregate (heatmap)</option>
-      <option value="two.html">individual data points</option>
+    <select name="what" id="what" onchange="go(this.options[this.selectedIndex].value + document.getElementById('what2').options[document.getElementById('what2').selectedIndex].value + '.html');
+    										validateVisibility();">
+      <option value="one">an aggregate (heatmap)</option>
+      <option value="two">individual data points</option>
+      <option value="three">line chart</option>
     </select>
     </div>
     
-     <div id=item>
+     <div id=item2>
   of 
-    <label for="what"></label>
-    <select name="what" id="what">
-      <option value="aggregate">All</option>
-      <option value="indiv">staff</option>
-          <option value="indiv">revenue</option>
+    <label for="what2"></label>
+    <select name="what2" id="what2" onchange="go(document.getElementById('what').options[document.getElementById('what').selectedIndex].value + this.options[this.selectedIndex].value + '.html')">
+      <option value="staff">staff</option>
+      <option value="revenue">revenue</option>
     </select>
     
     </div>
     
         
-     <div id=item>
+     <div id=item3>
   in 
     
     <label for="textfield"></label>
@@ -108,14 +151,14 @@ margin-top: 10px;
     
   </div>
   
-  <div id=item>
+  <div id=item4>
   <input name="Display" type="button" value="Display" />
   </div>
   
   </form>
   
 </div><br />
-<div id="frame"><iframe id="iframe" src="one.html" width="100%" height="100%"></iframe></div>
+<div id="frame"><iframe id="iframe" src="onestaff.html" width="100%" height="100%" scrolling="no"></iframe></div>
 </body>
 
 </html>

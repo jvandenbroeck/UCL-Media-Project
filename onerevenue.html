@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title></title>
+  
+  <SCRIPT LANGUAGE="JavaScript">
+function go(loc){
+    document.getElementById('iframe').src = loc;
+}
+</script>
+
+
+<style type="text/css">
+/*<![CDATA[*/
+body, div {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.map {
+width: 1000px;
+float:left;
+}
+.embed {
+float:left;
+margin-left:25px;
+}
+
+/*]]>*/
+</style></head>
+
+<body>
+<div class=map>
+<iframe width="1000px" height="600px" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?gco_region=GB&gco_dataMode=regions&containerId=gviz_canvas&q=select+gvizcountry(col4)%2C+col3%2C+col4+from+2827604+&qrs=where+gvizcountry(col4)+%3E%3D+&qre=+and+gvizcountry(col4)+%3C%3D+&qe=+limit+6&viz=GVIZ&t=MAP&width=1000&height=600"></iframe>
+</div>
+<div class=embed>
+<h2>Embeddable code</h2>
+<textarea cols="50" rows="5" >
+<iframe width="1000px" height="600px" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?gco_region=world&gco_dataMode=regions&containerId=gviz_canvas&q=select+gvizcountry(col4)%2C+col3%2C+col4+from+2827604+&qrs=where+gvizcountry(col4)+%3E%3D+&qre=+and+gvizcountry(col4)+%3C%3D+&qe=+limit+6&viz=GVIZ&t=MAP&width=1000&height=600"></iframe>
+</textarea>
+</div>
+
+
+</body>
+
+</html>
